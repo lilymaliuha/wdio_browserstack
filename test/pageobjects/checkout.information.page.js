@@ -1,3 +1,5 @@
+import { loggerHelper } from "../../helpers/logger.helper.js";
+
 class CheckoutInformationPage {
 
     get firstNameInput () { return $('~test-First Name'); }
@@ -6,6 +8,8 @@ class CheckoutInformationPage {
     get continueButton () { return $('~test-CONTINUE'); }
 
     async enterCheckoutInfoAndContinue(firstName, lastName, postalCode) {
+        loggerHelper.info('Enter checkout information and press continue');
+
         await this.firstNameInput.setValue(firstName);
         await this.lastNameInput.setValue(lastName);
         await this.postalCodeInput.setValue(postalCode);

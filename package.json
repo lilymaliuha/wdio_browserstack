@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "wdio_browserstack_project",
   "type": "module",
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -15,6 +15,8 @@
     "test": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "appium": "^1.22.1",
+    "dotenv": "^16.0.3",
+    "winston": "^3.8.2"
   }
 }
