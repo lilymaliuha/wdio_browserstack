@@ -169,7 +169,11 @@ export const config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     //
-    // =====
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    }
+// =====
     // Hooks
     // =====
     // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
