@@ -21,7 +21,7 @@ describe('Order tests', () => {
         await CheckoutOverviewPage.finishPurchase();
 
         await expect(CheckoutCompleteModule.isCompleteHeaderDisplayed()).toBeTruthy();
-        await expect(CheckoutCompleteModule.backHomeButton).toBeDisplayed()
+        await expect(CheckoutCompleteModule.backHomeButton).toBeDisplayed();
     });
 });
 

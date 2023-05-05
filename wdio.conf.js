@@ -14,8 +14,8 @@ export const config = {
     // should work too though). These services define specific user and key (or access key)
     // values you need to put in here in order to connect to these services.
     //
-    user: process.env.BROWSERSTACK_USERNAME || 'liliiamatviichuk1',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || '2K9vx2R2XkF4wLmaNqzx',
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     hostname: 'hub.browserstack.com',
     //
     // If you run your tests on Sauce Labs you can specify the region you want to run your tests
@@ -136,7 +136,7 @@ export const config = {
         [
             'browserstack',
             {
-                app: 'bs://715d85385547bfb10cc815c1954545397c7383ef',
+                app: '',
                 buildIdentifier: "${BUILD_NUMBER}",
                 browserstackLocal: true
             },
@@ -168,10 +168,6 @@ export const config = {
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
-    },
     //
     // =====
     // Hooks
