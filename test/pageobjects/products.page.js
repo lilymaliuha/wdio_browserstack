@@ -1,13 +1,14 @@
+import { loggerHelper } from "../../helpers/logger.helper.js";
+
 class ProductsPage {
 
-    get addProductToCartButton () { return $$('~test-ADD TO CART'); }
-    // const addProductToCartButton = $$('~test-ADD TO CART');
+    get firstAddProductToCartButton () { return $$('~test-ADD TO CART')[0]; }
 
-    async addProductToCartByIndex() {
-        // const addProductToCartButton = $$('~test-ADD TO CART');
-        await $$('~test-ADD TO CART')[0].click();
-        // await this.addProductToCartButton[0].waitForExist();
-        // await this.addProductToCartButton.find('')
+    async addFirstProductToCart() {
+        loggerHelper.info(`Add first product to cart`);
+
+        await this.firstAddProductToCartButton.waitForDisplayed();
+        await this.firstAddProductToCartButton.click();
     }
 
 }

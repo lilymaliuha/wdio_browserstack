@@ -7,19 +7,21 @@ import CheckoutOverviewPage from "../pageobjects/checkout.overview.page.js";
 import CheckoutCompleteModule from "../pageobjects/modules/checkout.complete.module.js";
 import { makeRandomString } from "../../helpers/test.data.generator.js";
 import * as dotenv from 'dotenv';
+
 dotenv.config();
 
 describe('Order tests', () => {
+
     it('user should be able to make an order', async () => {
         await LoginPage.login(process.env.APPLICATION_USERNAME, process.env.APPLICATION_PASSWORD);
-        await ProductsPage.addProductToCartByIndex();
+        await ProductsPage.addFirstProductToCart();
         await BaseHeaderModule.openCart();
         await CartPage.goToCheckout();
         await CheckoutInformationPage.enterCheckoutInfoAndContinue(makeRandomString(5), makeRandomString(5), makeRandomString(5));
         await CheckoutOverviewPage.finishPurchase();
 
-        expect(CheckoutCompleteModule.isCompleteHeaderDisplayed()).toBeTruthy();
-        expect(CheckoutCompleteModule.backHomeButton).toBeDisplayed()
+        await expect(CheckoutCompleteModule.isCompleteHeaderDisplayed()).toBeTruthy();
+        await expect(CheckoutCompleteModule.backHomeButton).toBeDisplayed()
     });
 });
 

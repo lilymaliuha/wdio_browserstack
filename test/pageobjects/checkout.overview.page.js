@@ -1,12 +1,15 @@
+import { loggerHelper } from "../../helpers/logger.helper.js";
+import { scrollToElementWithText } from "../../helpers/mobile.helper.js";
+
 class CheckoutOverviewPage {
 
     get finishButton () { return $('~test-FINISH'); }
 
     async finishPurchase() {
-        const bottomElementSelector = `new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("Finish"))`;
-        await $(`android=${bottomElementSelector}`);
+        loggerHelper.info('Click on finish button');
+
+        await scrollToElementWithText("Finish");
         await this.finishButton.click();
     }
-
 }
 export default new CheckoutOverviewPage();
