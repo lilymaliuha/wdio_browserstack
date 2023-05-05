@@ -1,0 +1,8 @@
+reports/
+node_modules
+built/
+mochawesome-report
+debug.log
+.idea/
+*.iml
+.vscode/
